@@ -1,0 +1,9 @@
+﻿
+Evaluation Only. Created with Aspose.Words. Copyright 2003-2023 Aspose Pty Ltd.
+Problem Statement for Techfest IIT Mumbai
+Personal Shopping Assistant: Develop an agent that assists with shopping tasks. This could include finding products in a store, comparing prices, checking product availability, and even making purchases on behalf of the user.
+Virtual Personal Assistant Optimization: Develop an agent that can manage and optimize personal schedules. The agent should intelligently handle appointments, set reminders, and suggest time management strategies based on user preferences and past behaviors.
+Automated Customer Support Agent: Develop an agent that can handle customer inquiries for a business. This agent should use natural language processing to understand and respond to customer queries, escalate issues when necessary, and learn from interactions to improve over time.
+Stock Market Analysis and Prediction Agent: Develop an agent that analyzes stock market trends and predicts future movements. The agent should use historical data and current market indicators to provide insights and investment recommendations.
+Automated Resume Screening and Matching Agent: Develop an agent that can intelligently screen and match resumes with job descriptions. The agent should use natural language processing (NLP) and machine learning techniques to understand the requirements listed in a job description and evaluate resumes based on these criteria.
+Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/
