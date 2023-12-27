@@ -17,9 +17,11 @@
 #     f.write(text)
 import os
 import aspose.words as aw
-for i in os.listdir("resumes"):
-    doc = aw.Document(f".//resumes/{i}")
-    doc.save(f".//text_resumes/{i}.txt")
-for i in os.listdir("jds"):
-    doc = aw.Document(f".//jds/{i}")
-    doc.save(f".//jd_text/{i}.txt")
+def converter():
+    for i in os.listdir("resumes"):
+        doc = aw.Document(f".//resumes/{i}")
+        doc.save(f".//text_resumes/{i}.txt")
+    for i in os.listdir("jds"):
+        doc = aw.Document(f".//jds/{i}")
+        doc.save(f".//jd_text/{i}.txt")
+

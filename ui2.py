@@ -1,6 +1,9 @@
 import tkinter as tk
 from tkinter import filedialog
 import os
+from agent_input import user
+from JD import agent
+from pdfconvs import converter
 
 class FindRightResumeApp:
     def __init__(self, master):
@@ -57,7 +60,10 @@ class FindRightResumeApp:
             os.rename(file_path, destination_path)
 
     def results(self):
-        self.result_print = tk.Label(text="Resume4.pdf is the best teh best fit for job_des1.pdf")
+        converter()
+        user.run()
+        agent.run()
+        self.result_print = tk.Label(text="results")
         self.result_print.pack(pady=10)
 
 

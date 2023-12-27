@@ -8,6 +8,10 @@ from spacy.lang.en.stop_words import STOP_WORDS
 import re
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from uagents.setup import fund_agent_if_low
+
+import tkinter as tk
+
 sw = list(STOP_WORDS)
 
 agent = Agent(
@@ -16,6 +20,8 @@ agent = Agent(
         seed="jdm secret phrase",
         endpoint=["http://127.0.0.1:8000/submit"],
     )
+
+fund_agent_if_low(agent.wallet.address())
 def clean_jd(jd):
    ''' a function to create a word cloud based on the input text parameter'''
    ## Clean the Text
@@ -66,15 +72,21 @@ class Request(Model):
 
 @agent.on_message(model=Request)
 async def handle_message(ctx:Context,msg:Request):
-    jd_dict = msg.message_jd
-    res_dict = msg.message_resume
+    jd_dict = msg.message[0]
+    res_dict = msg.message[1]
     res_jds = {}
+
+
     for i in jd_dict.keys():
         k = resume_score(jd_dict[i], res_dict)
         res_jds[i] = k
-
+    window = tk.window()
     for i in res_jds.keys():
-        print("For Job Description {} , {} resumes are shortlisted".format(i, res_jds[i]))
+        s = "For Job Description {} , {} resumes are shortlisted".format(i, res_jds[i])
+        lab = tk.label(window,text=s)
+        lab.pack(pady=10)
+    window.mainloop()
+
 
 
 

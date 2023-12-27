@@ -1,5 +1,5 @@
 from uagents import Agent, Context, Model
-
+from uagents.setup import fund_agent_if_low
 
 
 import os
@@ -7,7 +7,8 @@ import os
 class Message(Model):
     message : dict
 
-agent = Agent(name='user', seed='user secret phrase')
+user = Agent(name='user', seed='user secret phrase')
+fund_agent_if_low(user.wallet.address())
 recipient_address = 'agent1qtgaehce8tgqafl7h4sxzp2mcdt4zakdjwpmyrx0q3f7a753afhpwm003vj'
 def text_to_dict(directory_path):
     result_dict = {}
@@ -40,8 +41,8 @@ res_dict = text_to_dict(res_path)
 jd_path = './/jd_text'
 jd_dict = text_to_dict(jd_path)
 
-@agent.on_event('startup')
+@user.on_event('startup')
 async def send_message(ctx: Context):
     await ctx.send(recipient_address, Message(jd_dict))
-    await ctx.send(recipient_address, Message(res_dict))
+    # await ctx.send(recipient_address, Message(res_dict))
 
