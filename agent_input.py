@@ -35,9 +35,9 @@ def text_to_dict(directory_path):
     return result_dict
 
 # Example usage:
-res_path = '/Users/nitin/Documents/IBAB/techfest/text_resumes'
+res_path = './/text_resumes'
 res_dict = text_to_dict(res_path)
-jd_path = '/Users/nitin/Documents/IBAB/techfest/jd_text'
+jd_path = './/jd_text'
 jd_dict = text_to_dict(jd_path)
 
 @agent.on_event('startup')
